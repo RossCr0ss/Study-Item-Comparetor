@@ -2,7 +2,7 @@ import Card from '../UI/Card';
 import ExpenseItem from './ExpenseItem';
 import './ExpensesList.css';
 
-function ExpensesList() {
+const ExpensesList = () => {
   const expenses = [
     {
       id: 'e1',
@@ -36,6 +36,6 @@ function ExpensesList() {
       ))}
     </Card>
   );
-}
+};
 
 export default ExpensesList;
