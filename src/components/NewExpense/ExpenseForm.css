@@ -1,0 +1,48 @@
+.expense-form {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.expense-form .controls {
+  display: flex;
+  flex-grow: 1;
+}
+
+.expense-form .actions {
+  margin-left: 1rem;
+}
+
+.expense-form .actions button {
+  width: 100%;
+  background-color: #9966f1;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.expense-form .actions button:hover {
+  background-color: #05d373;
+}
+
+.expense-form .controls .controls__item {
+  margin: 0 1rem;
+  color: #161616;
+}
+
+.expense-form .controls .controls__item:first-child {
+  margin-left: 0;
+}
+
+.controls__item input {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
