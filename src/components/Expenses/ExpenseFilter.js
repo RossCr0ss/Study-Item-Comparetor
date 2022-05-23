@@ -1,18 +1,23 @@
 import './ExpenseFilter.css';
 
-const ExpensesFilter = () => {
+const ExpensesFilter = (props) => {
   let currentYear = new Date().getFullYear();
+
   const rangeYear = [];
 
   for (let i = 0; i < 4; i++) {
     rangeYear.push(currentYear--);
   }
 
+  const selectedYearHandler = (event) => {
+    props.onFilteredExpense(event.target.value);
+  };
+
   return (
     <div className="expenses-filter">
       <div className="expenses-filter__control">
         <label>Filter by year</label>
-        <select>
+        <select onChange={selectedYearHandler} value={props.selected}>
           {rangeYear.map((year, index) => (
             <option value={year} key={index}>
               {year}

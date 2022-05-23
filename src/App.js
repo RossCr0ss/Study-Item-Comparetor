@@ -1,6 +1,5 @@
 import NewExpense from './components/NewExpense/NewExpense';
 import ExpensesList from './components/Expenses/ExpensesList';
-import ExpensesFilter from './components/Expenses/ExpenseFilter';
 
 const App = () => {
   const expenses = [
@@ -32,7 +31,6 @@ const App = () => {
     <div>
       <h1>Hello World!</h1>
       <NewExpense addExpenseData={addExpenseDataHandler} />
-      <ExpensesFilter />
       <ExpensesList items={expenses} />
     </div>
   );
