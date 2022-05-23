@@ -5,14 +5,38 @@ import ExpenseItem from './ExpenseItem';
 import './ExpensesList.css';
 
 const ExpensesList = (props) => {
-  const [filteredYear, setFilteredYear] = useState(2022);
-  const filteredExpensesList = Object.values(props.items).filter(
-    (item) => item.date.getFullYear().toString() === filteredYear.toString()
-  );
+  const [filteredYear, setFilteredYear] = useState('All');
+  const filteredExpensesList = props.items.filter((item) => {
+    return item.date.getFullYear().toString() === filteredYear.toString();
+  });
 
   const getExpenseYearHandler = (value) => {
     setFilteredYear(value);
   };
+
+  let expensesContent = <h2>Expenses list is empty</h2>;
+
+  if (filteredYear === 'All' && props.items.length) {
+    expensesContent = props.items.map((item) => (
+      <ExpenseItem
+        title={item.title}
+        date={item.date}
+        amount={item.amount}
+        key={item.id}
+      />
+    ));
+  }
+
+  if (filteredExpensesList.length !== 0) {
+    expensesContent = filteredExpensesList.map((item) => (
+      <ExpenseItem
+        title={item.title}
+        date={item.date}
+        amount={item.amount}
+        key={item.id}
+      />
+    ));
+  }
 
   return (
     <Card className="expenses">
@@ -21,16 +45,7 @@ const ExpensesList = (props) => {
         onFilteredExpense={getExpenseYearHandler}
       />
 
-      {Object.keys(filteredExpensesList).length > 0 &&
-        filteredExpensesList.map((item) => (
-          <ExpenseItem
-            title={item.title}
-            date={item.date}
-            amount={item.amount}
-            key={item.id}
-          />
-        ))}
-      {Object.keys(filteredExpensesList).length === 0 && <h2>No Data</h2>}
+      {expensesContent}
     </Card>
   );
 };
