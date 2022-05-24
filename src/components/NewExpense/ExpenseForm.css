@@ -15,8 +15,7 @@
 }
 
 .expense-form .actions button {
-  width: 100%;
-  background-color: #9966f1;
+  width: 10rem;
   color: #fff;
   padding: 1rem 1.5rem;
   border: none;
@@ -24,7 +23,20 @@
   cursor: pointer;
 }
 
-.expense-form .actions button:hover {
+.expense-form .actions button.submit-btn {
+  background-color: #9966f1;
+  margin-left: 1rem;
+}
+
+.expense-form .actions button.submit-btn:disabled {
+  cursor: auto;
+}
+
+.expense-form .actions button.submit-btn:hover:disabled {
+  background-color: #9966f1;
+}
+
+.expense-form .actions button.submit-btn:hover {
   background-color: #05d373;
 }
 
@@ -45,4 +57,21 @@
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   box-sizing: border-box;
+}
+
+.show-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.show-form-btn {
+  background-color: #9966f1;
+  color: #fff;
+}
+
+.show-form-btn:hover {
+  background-color: #05d373;
+  margin: 0 auto;
 }

@@ -28,6 +28,7 @@ const ExpenseForm = (props) => {
     };
 
     props.onAddExpense(expenseData);
+    props.onShowForm();
 
     setTitle('');
     setAmount('');
@@ -72,7 +73,20 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="actions">
-        <button title="Add Expense" type="submit">
+        <button
+          title="Cancel"
+          type="button"
+          className="cancel-btn"
+          onClick={() => props.onShowForm()}
+        >
+          Cancel
+        </button>
+        <button
+          title="Add Expense"
+          type="submit"
+          className="submit-btn"
+          disabled={!title || !amount || !date}
+        >
           Add Expense
         </button>
       </div>

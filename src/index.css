@@ -8,3 +8,24 @@ body {
   background-color: rgb(50, 25, 50);
   color: #fff;
 }
+
+button {
+  position: relative;
+  border: none;
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+button.cancel-btn {
+  background-color: #df5757;
+}
+
+button.cancel-btn:hover {
+  background-color: #a54d44;
+}

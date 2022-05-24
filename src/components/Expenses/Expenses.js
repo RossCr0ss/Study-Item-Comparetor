@@ -27,6 +27,14 @@ const Expenses = (props) => {
     ));
   }
 
+  if (
+    filteredExpenses.length === 0 &&
+    filteredYear !== 'All' &&
+    props.items.length
+  ) {
+    expensesContent = <h2>Expenses is not found</h2>;
+  }
+
   if (filteredExpenses.length !== 0) {
     expensesContent = filteredExpenses.map((item) => (
       <ExpenseItem
