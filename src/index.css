@@ -29,3 +29,9 @@ button.cancel-btn {
 button.cancel-btn:hover {
   background-color: #a54d44;
 }
+
+.main-title {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}

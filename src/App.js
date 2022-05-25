@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Hello World!</h1>
+      <h1 className="main-title">Welcome to Comparetor</h1>
       <NewExpense addExpenseData={addExpenseDataHandler} />
       <Expenses items={expenses} />
     </div>
